@@ -1,1 +1,1 @@
-worker: node say.py
+worker: python say.py
