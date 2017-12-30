@@ -1,3 +1,4 @@
+
 {
   "name": "Verania",
   "description": "Zone Verona Bot",
@@ -7,6 +8,7 @@
     "start": "node say.py"
   },
   "dependencies": {
-    "discord.ext": "11.1.0",
+    "discord.py": "11.1.0",
+    "asyncio": "1.0.0",  
   }
 }
