@@ -1,14 +1,2 @@
-
-{
-  "name": "Verania",
-  "description": "Zone Verona Bot",
-  "version": "0.0.0",
-  "main": "say.py",
-  "scripts": {
-    "start": "node say.py"
-  },
-  "dependencies": {
-    "discord.py": "11.1.0",
-    "asyncio": "1.0.0",  
-  }
-}
+discord.py
+asyncio
