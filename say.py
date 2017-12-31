@@ -51,14 +51,13 @@ async def on_message(message):
                                                      await client.send_message(message.author, "Specifically for chat-based problems and an overall unique server, Verania is a Python-scripted bot that serves Zone Verona. Got any questions or concerns? DM Spooky Ghost#4720 !")
                                                  else:
                                                     if message.content.upper().startswith('!SAY'):
-                                                         if "<@&397061223549763584>" in [role.id for role in message.author.roles]: #Replace <Role ID> with the ID of the role you want to be able to execute this command
+                                                         if message.author.id == "285384820392198145":
                                                             await client.delete_message(message)
                                                             args = message.content.split(" ")
                                                             await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
                                                          else:
-                                                          msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
+                                                                    msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
 
 
 client.run("Mzk2NzIzMjg5NzgwNzgxMDU3.DSllwQ.mhmNiUbHT5_ohtBV-9WGZvKYaoY")
                                 
-# if "<role id>" in [role.id for role in message.author.roles]: #Replace <Role ID> with the ID of the role you want to be able to execute this command
