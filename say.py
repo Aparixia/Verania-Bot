@@ -38,26 +38,41 @@ async def on_message(message):
                                              userID = message.author.id
                                              await client.send_message(message.channel, "Hello, <@%s>!" % (userID))
                                          else:
-                                                 if message.content == "!help":
-                                                     await client.send_message(message.author,
-                                                  "                                                                                                                                                                                                                                 Verania Bot V.1.0.3"
-                                                  "                                                                                                                                                                                                                                                                          . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         "                
-                                                  "                                                                                                                                                                                                                                 Created by Grand General Aparixia."
-                                                  "                                                                                                                                                                                                                                                                          . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         "                                  
-                                                  "                                                                                                                                                                                                                                 https://pastebin.com/raw/svCTCmGR"
-                                                  "                                                                                                                                                                                                                                                                           . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       "
-                                                  "                                                                                                                                                                                                                                 Say !info for more information.")
-                                                     msg = await client.wait_for_message(author=message.author, content='!info')
-                                                     await client.send_message(message.author, "Specifically for chat-based problems and an overall unique server, Verania is a Python-scripted bot that serves Zone Verona. Got any questions or concerns? DM Spooky Ghost#4720 !")
-                                                 else:
-                                                    if message.content.upper().startswith('!SAY'):
-                                                         if message.author.id == "285384820392198145":
-                                                            await client.delete_message(message)
-                                                            args = message.content.split(" ")
-                                                            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-                                                         else:
-                                                                    msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
-
+                                                if message.content == "yip yip":
+                                                   await client.delete_message(message)
+                                                else:
+                                                     if message.content == "!help":
+                                                         await client.send_message(message.author,
+                                                      "                                                                                                                                                                                                                                 Verania Bot V.1.0.3"
+                                                      "                                                                                                                                                                                                                                                                          . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         "                
+                                                      "                                                                                                                                                                                                                                 Created by Grand General Aparixia."
+                                                      "                                                                                                                                                                                                                                                                          . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         "                                  
+                                                      "                                                                                                                                                                                                                                 https://pastebin.com/raw/svCTCmGR"
+                                                      "                                                                                                                                                                                                                                                                           . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       "
+                                                      "                                                                                                                                                                                                                                 Say !info for more information.")
+                                                         msg = await client.wait_for_message(author=message.author, content='!info')
+                                                         await client.send_message(message.author, "Specifically for chat-based problems and an overall unique server, Verania is a Python-scripted bot that serves Zone Verona. Got any questions or concerns? DM Spooky Ghost#4720 !")
+                                                     else:
+                                                            if message.content.upper().startswith('!SAY'):
+                                                                 if message.author.id == "285384820392198145":
+                                                                    await client.delete_message(message)
+                                                                    args = message.content.split(" ")
+                                                                    await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+                                                                 else:
+                                                                    if message.content.upper().startswith('!SAY'):
+                                                                         if message.author.id == "393753000616656897":
+                                                                            await client.delete_message(message)
+                                                                            args = message.content.split(" ")
+                                                                            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+                                                                         else:
+                                                                           if message.content.upper().startswith('!SAY'):
+                                                                                 if message.author.id == "278907050862313472":
+                                                                                    await client.delete_message(message)
+                                                                                    args = message.content.split(" ")
+                                                                                    await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+                                                                                 else:
+                                                                                    msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
+        
 
 client.run("Mzk2NzIzMjg5NzgwNzgxMDU3.DSllwQ.mhmNiUbHT5_ohtBV-9WGZvKYaoY")
                                 
