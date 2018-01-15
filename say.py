@@ -38,8 +38,8 @@ async def on_message(message):
                                              userID = message.author.id
                                              await client.send_message(message.channel, "Hello, <@%s>!" % (userID))
                                          else:
-                                                if message.content == "yip yip":
-                                                   await client.delete_message(message)
+                                                if message.content == "!fallen":
+                                                    await client.send_message(message.channel, "<@FallenElectron#4773> is a gay bastard.")
                                                 else:
                                                      if message.content == "!help":
                                                          await client.send_message(message.author,
@@ -71,7 +71,13 @@ async def on_message(message):
                                                                                     args = message.content.split(" ")
                                                                                     await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
                                                                                  else:
-                                                                                    msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
+                                                                                   if message.content.upper().startswith('!SAY'):
+                                                                                     if message.author.id == "207343854872035328":
+                                                                                        await client.delete_message(message)
+                                                                                        args = message.content.split(" ")
+                                                                                        await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+                                                                                     else:
+                                                                                        msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
         
 
 client.run("Mzk2NzIzMjg5NzgwNzgxMDU3.DSllwQ.mhmNiUbHT5_ohtBV-9WGZvKYaoY")
