@@ -80,5 +80,5 @@ async def on_message(message):
                                                                                         msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
         
 
-client.run("NDAzMjgzOTk3MjgwNDM2MjM0.DUFDBg.OTvcv8RAoUQ8A-t_m3PkY9Y5wEg")
+client.run("NDAzMjkxMTg2NTczNDc1ODQw.DUFJ7A.D_8HCOogMtKMVpEZjoFb4D7qcBM")
                                 
