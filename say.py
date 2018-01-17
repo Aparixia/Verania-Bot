@@ -54,7 +54,7 @@ async def on_message(message):
                                                          await client.send_message(message.author, "Specifically for chat-based problems and an overall unique server, Verania is a Python-scripted bot that serves Zone Verona. Got any questions or concerns? DM Spooky Ghost#4720 !")
                                                      else:
                                                             if message.content.upper().startswith('!SAY'):
-                                                                 if message.author.id == "285384820392198145":
+                                                                 if message.author.id == "349232253672357890":
                                                                     await client.delete_message(message)
                                                                     args = message.content.split(" ")
                                                                     await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
@@ -80,5 +80,5 @@ async def on_message(message):
                                                                                         msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
         
 
-client.run("Mzk2NzIzMjg5NzgwNzgxMDU3.DSllwQ.mhmNiUbHT5_ohtBV-9WGZvKYaoY")
+client.run("NDAzMjgzOTk3MjgwNDM2MjM0.DUFDBg.OTvcv8RAoUQ8A-t_m3PkY9Y5wEg")
                                 
