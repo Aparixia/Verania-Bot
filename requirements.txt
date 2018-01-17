@@ -1,13 +1,1 @@
-{
-  "name": "Verania",
-  "description": "Zone Verona",
-  "version": "0.0.0",
-  "main": "say.py",
-  "scripts": {
-    "start": "say.py"
-  },
-  "dependencies": {
-    "discord.py": "11.1.0",
-    "asyncio": "2.81.0"
-  }
-}
+discord.py
