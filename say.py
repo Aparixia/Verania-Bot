@@ -41,44 +41,22 @@ async def on_message(message):
                                                 if message.content == "!fallen":
                                                     await client.send_message(message.channel, "<@FallenElectron#4773> is a gay bastard.")
                                                 else:
-                                                     if message.content == "!help":
-                                                         await client.send_message(message.author,
-                                                      "                                                                                                                                                                                                                                 Verania Bot V.1.0.3"
-                                                      "                                                                                                                                                                                                                                                                          . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         "                
-                                                      "                                                                                                                                                                                                                                 Created by Grand General Aparixia."
-                                                      "                                                                                                                                                                                                                                                                          . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         "                                  
-                                                      "                                                                                                                                                                                                                                 https://pastebin.com/raw/svCTCmGR"
-                                                      "                                                                                                                                                                                                                                                                           . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       "
-                                                      "                                                                                                                                                                                                                                 Say !info for more information.")
-                                                         msg = await client.wait_for_message(author=message.author, content='!info')
-                                                         await client.send_message(message.author, "Specifically for chat-based problems and an overall unique server, Verania is a Python-scripted bot that serves Zone Verona. Got any questions or concerns? DM Spooky Ghost#4720 !")
+                                                     if message.content == "!info":
+                                                         await client.send_message(message.author,"Verania Bot Ver. 2.1")
+                                                         await client.send_message(message.author,"Created by Luminary Aparixia.")
+                                                         await client.send_message(message.author,"═════════════════════════════")
+                                                         await client.send_message(message.author,"COMMANDS")
+                                                         await client.send_message(message.author,"!info - Displays this dialogue prompt in Direct Messages.")
+                                                         await client.send_message(message.author,"!group - Sends you a link to Zone Verona in Direct Messages.")
+                                                         await client.send_message(message.author,"!holo - Sends you a link to the Zone Verona HOLO in Direct Messages.")
+                                                         await client.send_message(message.author,"!rally - Sends you a link to the Zone Verona Rally in Direct Messages.")
+                                                         await client.send_message(message.author,"!fort - Sends you a link to the Zone Verona Fort in Direct Messages.")
+                                                         await client.send_message(message.author,"!grp - Sends you a link to Group Recruiting Plaza in Direct Messages.")
+                                                         await client.send_message(message.author,"!cookie - Displays a :cookie: for you!")
+                                                         await client.send_message(message.author,"!greet - Greets the sender.")
                                                      else:
-                                                            if message.content.upper().startswith('!SAY'):
-                                                                 if message.author.id == "349232253672357890":
-                                                                    await client.delete_message(message)
-                                                                    args = message.content.split(" ")
-                                                                    await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-                                                                 else:
-                                                                    if message.content.upper().startswith('!SAY'):
-                                                                         if message.author.id == "393753000616656897":
-                                                                            await client.delete_message(message)
-                                                                            args = message.content.split(" ")
-                                                                            await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-                                                                         else:
-                                                                           if message.content.upper().startswith('!SAY'):
-                                                                                 if message.author.id == "278907050862313472":
-                                                                                    await client.delete_message(message)
-                                                                                    args = message.content.split(" ")
-                                                                                    await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-                                                                                 else:
-                                                                                   if message.content.upper().startswith('!SAY'):
-                                                                                     if message.author.id == "207343854872035328":
-                                                                                        await client.delete_message(message)
-                                                                                        args = message.content.split(" ")
-                                                                                        await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
-                                                                                     else:
-                                                                                        msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
+                                                         msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
         
 
-client.run("NDAzMjkxMTg2NTczNDc1ODQw.DUFJ7A.D_8HCOogMtKMVpEZjoFb4D7qcBM")
+client.run("NDAzMjkxMTg2NTczNDc1ODQw.DUS55Q.lPBnPbwzUc5Bj9oniyg6ZnlnRww")
                                 
