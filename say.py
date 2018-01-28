@@ -71,6 +71,35 @@ async def on_message(message):
 
     if message.content == ('!color'):
         await client.send_message(message.channel, message.author.color)
+
+# Group Links
+   
+    if message.content == "!group":
+        await client.send_message(message.author, "https://www.roblox.com/My/Groups.aspx?gid=3640557")
+
+    if message.content == "!holo":
+        await client.send_message(message.author, "https://www.roblox.com/games/1224078932/ZV-Blizzark")
+
+    if message.content == "!rally":
+        await client.send_message(message.author, "https://www.roblox.com/games/1224110579/ZV-Operation-Overdrive")
+
+    if message.content == "!fort":
+        await client.send_message(message.author, "https://www.roblox.com/games/1224113519/ZV-Storm-Peak")
+
+    if message.content == "!ad":
+        await client.send_message(message.author, "https://www.roblox.com/games/1263970819/ZV-Auto-Duels")
+                           
+    if message.content == "!grp":
+        await client.send_message(message.author, "https://www.roblox.com/games/6194809/Group-Recruiting-Plaza")
+                                    
+    if message.content == "!greet":
+        userID = message.author.id
+        await client.send_message(message.channel, "Hello, <@%s>!" % (userID))
+                                         
+    if message.content == "!fallen":
+       emperor = await client.get_user_info('393753000616656897')   
+       await client.send_message(emperor, "yip yip")
+
         
 # Censoring System
 
