@@ -3,60 +3,94 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
 import time
+import random
 
+# Startup & Presence Changer
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "!")
 @client.event
 async def on_ready():
-    print("Bot is online and connected to Discord")
+    print("Bot is online and connected to Discord.")
+    await client.change_presence(game=discord.Game(name='with Magic!'))
+         
+# Message Commands
 
 @client.event
 async def on_message(message):
+    
     if message.content == ('!cookie'):
-        await client.send_message(message.channel, ":cookie:")
-    else:
-            if message.content == "!group":
-                await client.send_message(message.author, "https://www.roblox.com/My/Groups.aspx?gid=3640557")
-            else:
-                    if message.content == "!holo":
-                        await client.send_message(message.author, "https://www.roblox.com/games/1224078932/ZV-Blizzark")
-                    else:
-                        if message.content == "!rally":
-                            await client.send_message(message.author, "https://www.roblox.com/games/1224110579/ZV-Operation-Overdrive")
-                        else:
-                            if message.content == "!fort":
-                                await client.send_message(message.author, "https://www.roblox.com/games/1224113519/ZV-Storm-Peak")
-                            else:
-                                if message.content == "!ad":
-                                    await client.send_message(message.author, "https://www.roblox.com/games/1263970819/ZV-Auto-Duels")
-                                else:
-                                    if message.content == "!grp":
-                                        await client.send_message(message.author, "https://www.roblox.com/games/6194809/Group-Recruiting-Plaza")
-                                    else:
-                                         if message.content == "!greet":
-                                             userID = message.author.id
-                                             await client.send_message(message.channel, "Hello, <@%s>!" % (userID))
-                                         else:
-                                                if message.content == "!fallen":
-                                                    await client.send_message(message.channel, "<@FallenElectron#4773> is a gay bastard.")
-                                                else:
-                                                     if message.content == "!info":
-                                                         await client.send_message(message.author,"Verania Bot Ver. 2.1")
-                                                         await client.send_message(message.author,"Created by Luminary Aparixia.")
-                                                         await client.send_message(message.author,"═════════════════════════════")
-                                                         await client.send_message(message.author,"COMMANDS")
-                                                         await client.send_message(message.author,"!info - Displays this dialogue prompt in Direct Messages.")
-                                                         await client.send_message(message.author,"!group - Sends you a link to Zone Verona in Direct Messages.")
-                                                         await client.send_message(message.author,"!holo - Sends you a link to the Zone Verona HOLO in Direct Messages.")
-                                                         await client.send_message(message.author,"!rally - Sends you a link to the Zone Verona Rally in Direct Messages.")
-                                                         await client.send_message(message.author,"!fort - Sends you a link to the Zone Verona Fort in Direct Messages.")
-                                                         await client.send_message(message.author,"!grp - Sends you a link to Group Recruiting Plaza in Direct Messages.")
-                                                         await client.send_message(message.author,"!cookie - Displays a :cookie: for you!")
-                                                         await client.send_message(message.author,"!greet - Greets the sender.")
-                                                     else:
-                                                         msg = await client.wait_for_message(author=message.author, content='192837192387123871293871092837190283712938719238719082730918273')
-        
+        userID = message.author.id
+        await client.send_message(message.channel, "Here is a :cookie: for you, <@%s>!" % (userID))
 
-client.run("NDAzMjkxMTg2NTczNDc1ODQw.DUS55Q.lPBnPbwzUc5Bj9oniyg6ZnlnRww")
-                                
+    
+    if message.content == ('!info'):
+        await client.send_message(message.author, "Hi, I'm Sennzai!")
+        await client.send_message(message.author, "``!cookie - Gives you a cookie!``")
+        await client.send_message(message.author, "``!greet - Greets the sender!``")
+        await client.send_message(message.author, "``!hug (name) - Hugs the chosen person!``")
+        await client.send_message(message.author, "``!status - Displays your current status.``")
+        await client.send_message(message.author, "``!game - Displays the game you are currently playing.``")
+        await client.send_message(message.author, "``!joined - Displays the time and date of when you joined.``")
+        await client.send_message(message.author, "``!toprole - Displays your highest ranking role.``")
+        await client.send_message(message.author, "``!color - Displays the showing color of your role.``")
+             
+
+    if message.content == ('!verify'):
+        user = await client.get_user_info('349232253672357890')
+        emperor = await client.get_user_info('393753000616656897')
+        author = message.author
+        await client.send_message(author, 'Welcome! Please state your rank.')
+        msg = await client.wait_for_message(author=message.author)
+        await client.send_message(author, 'Your response has been sent to a High Rank. You will be ranked soon!')
+        args = msg.content
+        await client.send_message(user, '%s is ready to be roled and ranked to:' % (author))
+        await client.send_message(user, args)
+        await client.send_message(emperor, '%s is ready to be roled and ranked to:' % (author))
+        await client.send_message(emperor, args)
+
+    if message.content == ('!greet'):
+        userID = message.author.id
+        await client.send_message(message.channel, "Hi, **<@%s>**!" % (userID))
+
+    if message.content.upper().startswith('!HUG'):
+        args = message.content.split(" ")
+        await client.send_message(message.channel, "**Sennzai** hugs **%s**! :heart:" % (" ".join(args[1:])))
+   
+    if message.content == ('!status'):
+        await client.send_message(message.channel, message.author.status)
+
+    if message.content == ('!game'):
+        await client.send_message(message.channel, message.author.game)
+
+    if message.content == ('!joined'):
+        await client.send_message(message.channel, message.author.joined_at)
+        
+    if message.content == ('!toprole'):
+        await client.send_message(message.channel, message.author.top_role)
+
+    if message.content == ('!color'):
+        await client.send_message(message.channel, message.author.color)
+        
+# Censoring System
+
+    if "yip" in message.content.lower():
+         await client.delete_message(message)
+
+    if "nigga" in message.content.lower():
+         await client.delete_message(message)
+
+    if "nigger" in message.content.lower():
+         await client.delete_message(message)
+
+
+# Welcome System
+
+@client.event
+async def on_member_join(member):
+    await client.send_message(member, "Welcome to Zone Verona! Remember to read the rules to have the best experience here. Say !verify to get being the roling prompt.")
+  
+# Bot Token           
+
+client.run("NDA3MTMxNTc1NDQ5Mjg4NzA0.DU9Cfw.xy3asep0_j0Gihg-5uBwqd1Q2Ws")
+
