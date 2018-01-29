@@ -35,6 +35,7 @@ async def on_message(message):
         await client.send_message(message.author, "``!toprole - Displays your highest ranking role.``")
         await client.send_message(message.author, "``!color - Displays the showing color of your role.``")
              
+# Verify System
 
     if message.content == ('!verify'):
         user = await client.get_user_info('349232253672357890')
@@ -49,6 +50,8 @@ async def on_message(message):
         await client.send_message(emperor, '%s is ready to be roled and ranked to:' % (author))
         await client.send_message(emperor, args)
 
+# Fun Commands
+
     if message.content == ('!greet'):
         userID = message.author.id
         await client.send_message(message.channel, "Hi, **<@%s>**!" % (userID))
@@ -56,6 +59,58 @@ async def on_message(message):
     if message.content.upper().startswith('!HUG'):
         args = message.content.split(" ")
         await client.send_message(message.channel, "**Sennzai** hugs **%s**! :heart:" % (" ".join(args[1:])))
+        
+    if message.content.upper().startswith('!HIT'):
+        args = message.content.split(" ")
+        await client.send_message(message.channel, "**Sennzai** smacks **%s**! :hand_splayed:" % (" ".join(args[1:])))
+
+
+
+
+    elif message.content.startswith("!rps"):
+        await client.send_message(message.channel, "Alright! What do you pick?")
+        answer = await client.wait_for_message(author=message.author)
+        randomnum = random.randint(0, 2)
+        if randomnum == 0:
+            if answer.content.upper().startswith('!ROCK'):
+               await client.send_message(message.channel, "Paper! I win! :hand_splayed:")
+            else:
+                if answer.content.upper().startswith('!SCISSORS'):
+                    await client.send_message(message.channel, "Paper! You win! :hand_splayed:")
+                else:
+                    if answer.content.upper().startswith('!PAPER'):
+                        await client.send_message(message.channel, "Paper! We tie! :hand_splayed:")
+                    else:
+                        await client.send_message(message.channel, "Did you say the right command?")
+        else:                 
+            if randomnum == 1:
+                if answer.content.upper().startswith('!ROCK'):
+                   await client.send_message(message.channel, "Scissors! You win! :v:")
+                else:
+                    if answer.content.upper().startswith('!SCISSORS'):
+                        await client.send_message(message.channel, "Scissors! We tie! :v:")
+                    else:
+                        if answer.content.upper().startswith('!PAPER'):
+                            await client.send_message(message.channel, "Scissors! I win! :v:")
+                        else:
+                           await client.send_message(message.channel, "Did you say the right command?")
+            else:
+                if randomnum == 2:
+                    if answer.content.upper().startswith('!ROCK'):
+                       await client.send_message(message.channel, "Rock! We tie! :fist:")
+                    else:
+                        if answer.content.upper().startswith('!SCISSORS'):
+                            await client.send_message(message.channel, "Rock! I win! :fist:")
+                        else:
+                            if answer.content.upper().startswith('!PAPER'):
+                                await client.send_message(message.channel, "Rock! You win! :fist:")
+                            else:
+                                await client.send_message(message.channel, "Did you say the right command?")
+
+
+
+                    
+# Boring Commands
    
     if message.content == ('!status'):
         await client.send_message(message.channel, message.author.status)
@@ -95,12 +150,7 @@ async def on_message(message):
     if message.content == "!greet":
         userID = message.author.id
         await client.send_message(message.channel, "Hello, <@%s>!" % (userID))
-                                         
-    if message.content == "!fallen":
-       emperor = await client.get_user_info('393753000616656897')   
-       await client.send_message(emperor, "yip yip")
-
-        
+                                                
 # Censoring System
 
     if "yip" in message.content.lower():
