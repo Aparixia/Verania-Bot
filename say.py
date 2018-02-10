@@ -34,8 +34,7 @@ async def on_message(message):
         await client.send_message(message.author, "``!joined - Displays the time and date of when you joined.``")
         await client.send_message(message.author, "``!toprole - Displays your highest ranking role.``")
         await client.send_message(message.author, "``!color - Displays the showing color of your role.``")
-        await client.send_message(message.author, "``!rate (name) - Rates the given object.``")
-        await client.send_message(message.author, "``!hit (name) - Hits the chosen person.``")
+
 # Verify System
 
     if message.content == ('!verify'):
@@ -111,51 +110,7 @@ async def on_message(message):
                                 await client.send_message(message.channel, "Rock! You win! :fist:")
                             else:
                                 await client.send_message(message.channel, "Did you say the right command?")
-
-
-
-
-        elif message.content.upper().startswith("!rate"):
-             args = message.content.split(" ")
-             randomnum = random.randint(1, 10)
-             if randomnum == 1:
-                await client.send_message(message.channel, "I'd give **%s** a **1/10**. :frowning:" % (" ".join(args[1:])))
-             else:
-                 if randomnum == 2:
-                    await client.send_message(message.channel, "I'd give **%s** a **2/10**. :frowning:" % (" ".join(args[1:]))) 
-                 else:
-                    if randomnum == 3:
-                        await client.send_message(message.channel, "I'd give **%s** a **3/10**. :frowning:" % (" ".join(args[1:])))
-
-                    else:
-                        if randomnum == 4:
-                            await client.send_message(message.channel, "I'd give **%s** a **4/10**. :slight_frown:" % (" ".join(args[1:])))
-                     
-                        else:
-                            if randomnum == 5:
-                                await client.send_message(message.channel, "I'd give **%s** a **5/10**. :neutral_face:" % (" ".join(args[1:])))
-
-                            else:
-                                if randomnum == 6:
-                                    await client.send_message(message.channel, "I'd give **%s** a **6/10**. :slight_smile:" % (" ".join(args[1:])))
-
-                                else:
-                                    if randomnum == 7:
-                                        await client.send_message(message.channel, "I'd give **%s** a **7/10**. :slight_smile:" % (" ".join(args[1:])))
-
-                                    else:
-                                        if randomnum == 8:
-                                            await client.send_message(message.channel, "I'd give **%s** a **8/10**. :smile:" % (" ".join(args[1:])))
-
-                                        else:
-                                            if randomnum == 9:
-                                                await client.send_message(message.channel, "I'd give **%s** a **9/10**. :smile:" % (" ".join(args[1:])))
-
-                                            else:
-                                                if randomnum == 10:
-                                                    await client.send_message(message.channel, "I'd give **%s** a **10/10**. :smile:" % (" ".join(args[1:])))
-
-                                        
+                                       
 # Boring Commands
    
     if message.content == ('!status'):
