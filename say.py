@@ -34,7 +34,8 @@ async def on_message(message):
         await client.send_message(message.author, "``!joined - Displays the time and date of when you joined.``")
         await client.send_message(message.author, "``!toprole - Displays your highest ranking role.``")
         await client.send_message(message.author, "``!color - Displays the showing color of your role.``")
-             
+        await client.send_message(message.author, "``!rate (name) - Rates the given object.``")
+        await client.send_message(message.author, "``!hit (name) - Hits the chosen person.``")
 # Verify System
 
     if message.content == ('!verify'):
@@ -61,12 +62,16 @@ async def on_message(message):
         await client.send_message(message.channel, "**Sennzai** hugs **%s**! :heart:" % (" ".join(args[1:])))
         
     if message.content.upper().startswith('!HIT'):
-        args = message.content.split(" ")
+
         await client.send_message(message.channel, "**Sennzai** smacks **%s**! :hand_splayed:" % (" ".join(args[1:])))
+        
+    if message.content.upper().startswith("!RATE"):
+        randomnum = random.randint(0, 10)
+        await client.send_message(message.channel, "I'd rate that with a &s out of 10." % (randomnum))
 
+# RPS
 
-
-
+    
     elif message.content.startswith("!rps"):
         await client.send_message(message.channel, "Alright! What do you pick?")
         answer = await client.wait_for_message(author=message.author)
@@ -109,7 +114,48 @@ async def on_message(message):
 
 
 
-                    
+
+        elif message.content.upper().startswith("!rate"):
+             args = message.content.split(" ")
+             randomnum = random.randint(1, 10)
+             if randomnum == 1:
+                await client.send_message(message.channel, "I'd give **%s** a **1/10**. :frowning:" % (" ".join(args[1:])))
+             else:
+                 if randomnum == 2:
+                    await client.send_message(message.channel, "I'd give **%s** a **2/10**. :frowning:" % (" ".join(args[1:]))) 
+                 else:
+                    if randomnum == 3:
+                        await client.send_message(message.channel, "I'd give **%s** a **3/10**. :frowning:" % (" ".join(args[1:])))
+
+                    else:
+                        if randomnum == 4:
+                            await client.send_message(message.channel, "I'd give **%s** a **4/10**. :slight_frown:" % (" ".join(args[1:])))
+                     
+                        else:
+                            if randomnum == 5:
+                                await client.send_message(message.channel, "I'd give **%s** a **5/10**. :neutral_face:" % (" ".join(args[1:])))
+
+                            else:
+                                if randomnum == 6:
+                                    await client.send_message(message.channel, "I'd give **%s** a **6/10**. :slight_smile:" % (" ".join(args[1:])))
+
+                                else:
+                                    if randomnum == 7:
+                                        await client.send_message(message.channel, "I'd give **%s** a **7/10**. :slight_smile:" % (" ".join(args[1:])))
+
+                                    else:
+                                        if randomnum == 8:
+                                            await client.send_message(message.channel, "I'd give **%s** a **8/10**. :smile:" % (" ".join(args[1:])))
+
+                                        else:
+                                            if randomnum == 9:
+                                                await client.send_message(message.channel, "I'd give **%s** a **9/10**. :smile:" % (" ".join(args[1:])))
+
+                                            else:
+                                                if randomnum == 10:
+                                                    await client.send_message(message.channel, "I'd give **%s** a **10/10**. :smile:" % (" ".join(args[1:])))
+
+                                        
 # Boring Commands
    
     if message.content == ('!status'):
@@ -167,7 +213,7 @@ async def on_message(message):
 
 @client.event
 async def on_member_join(member):
-    await client.send_message(member, "Welcome to Zone Verona! Remember to read the rules to have the best experience here. Say !verify to get being the roling prompt.")
+    await client.send_message(member, "Welcome to Zone Verona! Remember to read the rules to have the best experience here. Say !verify to get begin the roling prompt.")
   
 # Bot Token           
 
