@@ -163,13 +163,6 @@ async def on_message(message):
     if "nigger" in message.content.lower():
          await client.delete_message(message)
 
-
-# Welcome System
-
-@client.event
-async def on_member_join(member):
-    await client.send_message(member, "Welcome to Zone Verona! Remember to read the rules to have the best experience here. Say !verify to get begin the roling prompt.")
-  
 # Bot Token           
 
 client.run("NDA3MTMxNTc1NDQ5Mjg4NzA0.DU9Cfw.xy3asep0_j0Gihg-5uBwqd1Q2Ws")
