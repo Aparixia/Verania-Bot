@@ -8,38 +8,26 @@ import random
 # Startup & Presence Changer
 
 Client = discord.Client()
-client = commands.Bot(command_prefix = "!")
+client = commands.Bot(command_prefix = "+")
 @client.event
 async def on_ready():
     print("Bot is online and connected to Discord.")
-    await client.change_presence(game=discord.Game(name='with Magic!'))
+    await client.change_presence(game=discord.Game(name='with shutdown clans! | prefix: +'))
          
 # Message Commands
 
 @client.event
 async def on_message(message):
     
-    if message.content == ('!cookie'):
+    if message.content == ('+cookie'):
         userID = message.author.id
         await client.send_message(message.channel, "Here is a :cookie: for you, <@%s>!" % (userID))
-
-    
-    if message.content == ('!info'):
-        await client.send_message(message.author, "Hi, I'm Sennzai!")
-        await client.send_message(message.author, "``!cookie - Gives you a cookie!``")
-        await client.send_message(message.author, "``!greet - Greets the sender!``")
-        await client.send_message(message.author, "``!hug (name) - Hugs the chosen person!``")
-        await client.send_message(message.author, "``!status - Displays your current status.``")
-        await client.send_message(message.author, "``!game - Displays the game you are currently playing.``")
-        await client.send_message(message.author, "``!joined - Displays the time and date of when you joined.``")
-        await client.send_message(message.author, "``!toprole - Displays your highest ranking role.``")
-        await client.send_message(message.author, "``!color - Displays the showing color of your role.``")
-
+             
 # Verify System
 
-    if message.content == ('!verify'):
+    if message.content == ('+verify'):
         user = await client.get_user_info('349232253672357890')
-        emperor = await client.get_user_info('393753000616656897')
+        emperor = await client.get_user_info('501181713033068565')
         author = message.author
         await client.send_message(author, 'Welcome! Please state your rank.')
         msg = await client.wait_for_message(author=message.author)
@@ -52,17 +40,17 @@ async def on_message(message):
 
 # Fun Commands
 
-    if message.content == ('!greet'):
+    if message.content == ('+greet'):
         userID = message.author.id
         await client.send_message(message.channel, "Hi, **<@%s>**!" % (userID))
 
     if message.content.upper().startswith('!HUG'):
         args = message.content.split(" ")
-        await client.send_message(message.channel, "**Sennzai** hugs **%s**! :heart:" % (" ".join(args[1:])))
+        await client.send_message(message.channel, "**Chasma** hugs **%s**! :heart:" % (" ".join(args[1:])))
         
     if message.content.upper().startswith('!HIT'):
 
-        await client.send_message(message.channel, "**Sennzai** smacks **%s**! :hand_splayed:" % (" ".join(args[1:])))
+        await client.send_message(message.channel, "**Chasma** smacks **%s**! :hand_splayed:" % (" ".join(args[1:])))
         
     if message.content.upper().startswith("!RATE"):
         randomnum = random.randint(0, 10)
@@ -110,47 +98,79 @@ async def on_message(message):
                                 await client.send_message(message.channel, "Rock! You win! :fist:")
                             else:
                                 await client.send_message(message.channel, "Did you say the right command?")
-                                       
+
+
+
+
+        if message.content.upper().startswith("!rate"):
+             args = message.content.split(" ")
+             randomnum = random.randint(1, 10)
+             if randomnum == 1:
+                await client.send_message(message.channel, "I'd give **%s** a **1/10**. :frowning:" % (" ".join(args[1:])))
+             else:
+                 if randomnum == 2:
+                    await client.send_message(message.channel, "I'd give **%s** a **2/10**. :frowning:" % (" ".join(args[1:]))) 
+                 else:
+                    if randomnum == 3:
+                        await client.send_message(message.channel, "I'd give **%s** a **3/10**. :frowning:" % (" ".join(args[1:])))
+
+                    else:
+                        if randomnum == 4:
+                            await client.send_message(message.channel, "I'd give **%s** a **4/10**. :slight_frown:" % (" ".join(args[1:])))
+                     
+                        else:
+                            if randomnum == 5:
+                                await client.send_message(message.channel, "I'd give **%s** a **5/10**. :neutral_face:" % (" ".join(args[1:])))
+
+                            else:
+                                if randomnum == 6:
+                                    await client.send_message(message.channel, "I'd give **%s** a **6/10**. :slight_smile:" % (" ".join(args[1:])))
+
+                                else:
+                                    if randomnum == 7:
+                                        await client.send_message(message.channel, "I'd give **%s** a **7/10**. :slight_smile:" % (" ".join(args[1:])))
+
+                                    else:
+                                        if randomnum == 8:
+                                            await client.send_message(message.channel, "I'd give **%s** a **8/10**. :smile:" % (" ".join(args[1:])))
+
+                                        else:
+                                            if randomnum == 9:
+                                                await client.send_message(message.channel, "I'd give **%s** a **9/10**. :smile:" % (" ".join(args[1:])))
+
+                                            else:
+                                                if randomnum == 10:
+                                                    await client.send_message(message.channel, "I'd give **%s** a **10/10**. :smile:" % (" ".join(args[1:])))
+
+                                        
 # Boring Commands
    
-    if message.content == ('!status'):
+    if message.content == ('+status'):
         await client.send_message(message.channel, message.author.status)
 
-    if message.content == ('!game'):
+    if message.content == ('+game'):
         await client.send_message(message.channel, message.author.game)
 
-    if message.content == ('!joined'):
+    if message.content == ('+joined'):
         await client.send_message(message.channel, message.author.joined_at)
         
-    if message.content == ('!toprole'):
+    if message.content == ('+toprole'):
         await client.send_message(message.channel, message.author.top_role)
 
-    if message.content == ('!color'):
+    if message.content == ('+color'):
         await client.send_message(message.channel, message.author.color)
 
 # Group Links
    
     if message.content == "!group":
-        await client.send_message(message.author, "https://www.roblox.com/My/Groups.aspx?gid=3640557")
+        await client.send_message(message.author, "https://www.roblox.com/my/groups.aspx?gid=4100568")
 
     if message.content == "!holo":
-        await client.send_message(message.author, "https://www.roblox.com/games/1224078932/ZV-Blizzark")
-
-    if message.content == "!rally":
-        await client.send_message(message.author, "https://www.roblox.com/games/1224110579/ZV-Operation-Overdrive")
+        await client.send_message(message.author, "https://www.roblox.com/games/1716492386/EA-Flagship-Metuo")
 
     if message.content == "!fort":
-        await client.send_message(message.author, "https://www.roblox.com/games/1224113519/ZV-Storm-Peak")
-
-    if message.content == "!ad":
-        await client.send_message(message.author, "https://www.roblox.com/games/1263970819/ZV-Auto-Duels")
-                           
-    if message.content == "!grp":
-        await client.send_message(message.author, "https://www.roblox.com/games/6194809/Group-Recruiting-Plaza")
+        await client.send_message(message.author, "https://www.roblox.com/games/1946723603/EA-Battleship-Lietus")
                                     
-    if message.content == "!greet":
-        userID = message.author.id
-        await client.send_message(message.channel, "Hello, <@%s>!" % (userID))
                                                 
 # Censoring System
 
@@ -163,6 +183,13 @@ async def on_message(message):
     if "nigger" in message.content.lower():
          await client.delete_message(message)
 
+
+# Welcome System
+
+@client.event
+async def on_member_join(member):
+    await client.send_message(member, "Welcome to Ethereal Abyss! Make sure to say +verify to get roled.")
+  
 # Bot Token           
 
 client.run("NDA3MTMxNTc1NDQ5Mjg4NzA0.DU9Cfw.xy3asep0_j0Gihg-5uBwqd1Q2Ws")
